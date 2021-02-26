@@ -1,5 +1,5 @@
 {% set name = "exdown" %}
-{% set version = "0.8.4" %}
+{% set version = "0.8.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 06a72db1b3481448082a4680a4af8e42f58d2926044705292aa77107939b64c7
+  sha256: 7219f213246c4eb622e930caf73753d0a4b6fa705931db40b6e458e7213fc6d3
 
 build:
   noarch: python
