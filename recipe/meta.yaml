@@ -29,9 +29,9 @@ test:
   requires:
     - pytest
   source_files:
-    - test
+    - tests/
   commands:
-    - cd test && python -m pytest
+    - python -m pytest
 
 about:
   home: https://github.com/nschloe/exdown
