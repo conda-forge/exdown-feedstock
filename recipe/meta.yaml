@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: af44828a0914a4e89b6b83037fcd3e74b8ce8e3aee54d20b87fada59fbe35c0d
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3
+    - python >={{ python_min }}
     - pytest
 
 test:
@@ -28,6 +28,7 @@ test:
     - exdown
   requires:
     - pytest
+    - python {{ python_min }}
   source_files:
     - tests/
   commands:
